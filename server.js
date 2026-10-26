@@ -37,12 +37,12 @@ app.post('/messages', (req, res) => {
     res.redirect('/')
   })
 })
-
-app.put('/messages', (req, res) => {
+//message for Up
+app.put('/messagesUp', (req, res) => {
   db.collection('messages')
   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
-    $set: {
-      thumbUp:req.body.thumbUp + 1
+    $inc: {
+      thumbUp: 1
     }
   }, {
     sort: {_id: -1},
@@ -52,6 +52,22 @@ app.put('/messages', (req, res) => {
     res.send(result)
   })
 })
+//message for down
+app.put('/messagesDown', (req, res) => {
+  db.collection('messages')
+  .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
+    $inc: {
+      thumbUp: -1
+    }
+  }, {
+    sort: {_id: -1},
+    upsert: true
+  }, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
+  })
+})
+
 
 app.delete('/messages', (req, res) => {
   db.collection('messages').findOneAndDelete({name: req.body.name, msg: req.body.msg}, (err, result) => {
