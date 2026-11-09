@@ -1,6 +1,7 @@
 # 🎤 21 Savage Fan Message Board
 
-![21 Savage](public/21savage.jpg)
+<img width="522" height="540" alt="21 savage demo SS" src="https://github.com/user-attachments/assets/c9ff91cc-988d-49e3-ba91-d1c21791238d" />
+
 
 ### Full-Stack CRUD Application
 
@@ -91,4 +92,4 @@ There are still a few improvements I'd make:
 
 ## Acknowledgments
 
-This project was developed as part of my full-stack development practice and served as a foundation for later projects involving authentication and CRUD functionality.
+This project was developed as part of my full-stack development practice and served as a foundation for later projects involving authentication and CRUD functionality. 
